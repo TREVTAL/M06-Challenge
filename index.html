@@ -6,11 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
        <link rel="stylesheet" href="./assets/CSS/style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Weather Dashboard</title>
   </head>
 
   <body>
-    
+    <header class="container-fluid bg-primary text-white mb-5 p-3">
+      <div class="text-center">
+        <h1>Weather Dashboard</h1>
+      </div>
+    </header>
+
+    <main class="container-fluid ">
+      <section class="row">
+        <div class="col-2">
+          <div>
+            <h3>Search for a City:</h3>
+            <form>
+              <div class="form-group">
+                <label for="city-input"></label>
+                <input type="text" class="form-control" id="city-input" placeholder="Arteaga" />
+              </div>
+              <button class="btn btn-primary">Search.</button>
+            </form>
+          </div>
+          <hr />
+          <div>
+            <button class="btn btn-secondary"> Last searched cities</button>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="card col-12">
+            <div class="card-header bg-white">
+              <p>City name and date goes here</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Current weather conditions go here</p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <h5>5 Day Forecast:</h5>
+            <div class="row">
+              <div class="card col">
+                  <div class="card-header bg-white">
+                    <p>Today + 1</p>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">That days weather conditions go here</p>
+                  </div>            
+              </div>
+              <div class="card col">
+                  <div class="card-header bg-white">
+                    <p>Today + 2</p>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">That days weather conditions go here</p>
+                  </div>            
+              </div>
+                <div class="card col">
+                  <div class="card-header bg-white">
+                    <p>Today + 3</p>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">That days weather conditions go here</p>
+                  </div>            
+              </div>
+                <div class="card col">
+                  <div class="card-header bg-white">
+                    <p>Today + 4</p>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">That days weather conditions go here</p>
+                  </div>            
+              </div>
+                <div class="card col">
+                  <div class="card-header bg-white">
+                    <p>Today + 5</p>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">That days weather conditions go here</p>
+                  </div>            
+              </div>
+            </div>
+          </div>   
+          
+          
+        </div>
+      </section>
+    </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>

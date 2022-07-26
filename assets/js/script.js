@@ -6,6 +6,7 @@ var currentTempEl = document.getElementById('currentTemp');
 var currentWindEl = document.getElementById('currentWind');
 var currentHumidityEl = document.getElementById('currentHumidity');
 var currentUVIEl = document.getElementById('currentUVI');
+var searchHistoryEl = document.getElementById('searchHistory');
 
 // setup vars for forecast
 var date1El = document.getElementById('date1');
@@ -44,15 +45,32 @@ var formSubmitHandler = function (event) {
     event.preventDefault();
   
     var city = cityInputEl.value.trim();
-  
+    var newButton = document.createElement('button');
+    newButton.textContent = city;
+    newButton.setAttribute('class' , 'btn btn-secondary col-12 m-2');
+    newButton.setAttribute('data-city' , city);
+
+    searchHistoryEl.appendChild(newButton);
+
     if (city) {
       getCurrentCond(city);
         console.log('OK');
 
+
     } else {
       alert('Please try entering your city name again');
     }
+
 };
+
+var buttonClickHandler = function (event) {
+    var city = event.target.getAttribute('data-city');
+  
+    if (city) {
+        getCurrentCond(city);
+
+    }
+  };
 
 // var getCurrentCond = function (city) {
 //     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiId ;
@@ -170,8 +188,8 @@ function secondAPI(lat , lon) {
         hum5El.textContent = 'Humidity: ' +secondData.daily[5].humidity +'%';
     
     })
-
-
+return;
 }
 
 cityInputBtnEl.addEventListener('submit', formSubmitHandler);
+searchHistoryEl.addEventListener('click', buttonClickHandler);

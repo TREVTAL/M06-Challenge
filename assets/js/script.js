@@ -83,7 +83,13 @@ function secondAPI(lat , lon) {
     .then(function(secondData){
         console.log(secondData);
         currentUVIEl.textContent = 'UV Index: ' +secondData.current.uvi;
-
+        console.log(secondData.daily[0]);
+        console.log(secondData.daily[0].temp.day);
+        console.log(secondData.daily[0].wind_speed);
+        console.log(secondData.daily[0].weather[0].icon);
+        console.log(secondData.daily[0].humidity);
+        var datePlus1 = moment.unix(secondData.daily[0].dt).format("MMM/D/YYYY");
+        console.log(datePlus1);
     })
 
 

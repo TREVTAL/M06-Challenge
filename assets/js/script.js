@@ -41,6 +41,8 @@ var hum5El = document.getElementById('hum5');
 
 var apiId = '647023ed4a626690e5133a1c44248d4c';
 
+
+// City declaration, button creation and launch current conditions
 var formSubmitHandler = function (event) {
     event.preventDefault();
   
@@ -63,6 +65,8 @@ var formSubmitHandler = function (event) {
 
 };
 
+
+// Respond to the button click and get city name
 var buttonClickHandler = function (event) {
     var city = event.target.getAttribute('data-city');
   
@@ -72,31 +76,8 @@ var buttonClickHandler = function (event) {
     }
   };
 
-// var getCurrentCond = function (city) {
-//     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiId ;
-  
-//     fetch(apiUrl)
-//       .then(function (response) {
-//         if (response.ok) {
-//           response.json().then(function (data) {
-//             consolearRespuesta(data);
-//           });
-          
-//         } else {
-//           alert('Error: ' + response.statusText);
-//         }
-//       })
-//       .catch(function (error) {
-//         alert('Unable to connect to OpenWeather');
-//       });
-// };
 
-// var consolearRespuesta = function (data) {
-//     console.log(getCurrentCond);
-// }
-//   }
-
-
+  // API fetch for current conditions, display them and get LAT and LON for second API with UVI and forecast
 function getCurrentCond(city) {
     var requestUrl ='https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric&appid=' + apiId ;
   
@@ -122,6 +103,8 @@ function getCurrentCond(city) {
       });    
 }
 
+
+// Second API to request UVI and forecast and display them
 function secondAPI(lat , lon) {
     var requestSecondUrl = "https://api.openweathermap.org/data/3.0/onecall?lat=" +lat+ "&lon=" +lon+ "&exclude=hourly,minutely&units=metric&appid=" +apiId;
 
@@ -191,5 +174,7 @@ function secondAPI(lat , lon) {
 return;
 }
 
+
+// Event Listneres
 cityInputBtnEl.addEventListener('submit', formSubmitHandler);
 searchHistoryEl.addEventListener('click', buttonClickHandler);

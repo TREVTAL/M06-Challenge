@@ -20,4 +20,4 @@ M06 Challenge, Weather Dashboard has the following features:
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/TREVTAL/M05-Challenge/main/assets/Images/Screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/TREVTAL/M06-Challenge/main/assets/Images/Weather%20Dashboard%20ScreenShot.png)
